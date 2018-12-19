@@ -18,6 +18,6 @@ const UserSchema = new Schema({
 	createdAt: { type: Date }
 });
 
-const User = mongoose.model("Users", CompaignSchema);
+const User = mongoose.model("Users", UserSchema);
 
 module.exports = User;

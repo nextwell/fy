@@ -26,7 +26,7 @@ module.exports.create = (data) => {
 		photo: data.photosrc,
 		balance: 0,
 		currency: data.currency,
-		campaignSubs: data.campaignSubs,
+		campaignSubs: data.campaignSubs || [],
 		wishList: data.wishList || [],
 		categoriesSubs: data.categoriesSubs || [],
 		tagsSubs: data.tagsSubs || [],
