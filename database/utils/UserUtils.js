@@ -1,7 +1,7 @@
 let mongoose = require('mongoose'),
-	Campaigns 	 = require('../models/Campaign.js');
+	Users 	 = require('../models/User.js');
 
-const Campaign = mongoose.model('Campaigns');
+const User = mongoose.model('Users');
 
 //----------------------------------------------------------------------------------------
 // Option config
@@ -9,40 +9,36 @@ const Campaign = mongoose.model('Campaigns');
 let cfg = require('./../../config.js');
 
 //----------------------------------------------------------------------------------------
-// Searching campaign // LOGIN
+// Searching user // LOGIN
 
 module.exports.search = (login, password) => {
-	return Campaigns.findOne( { login: login, password: password } );
+	return Users.findOne( { login: login, password: password } );
 }
 
 //----------------------------------------------------------------------------------------
-// Sign up new campaign
+// Sign up new user
 
 module.exports.create = (data) => {
-	let campaign = new Campaign({
+	let user = new User({
 		login: data.login,
 		password: data.password,
 		name: data.name,
-		description: data.description || 'Empty space',
+		photo: data.photosrc,
 		balance: 0,
-		status: 'deactivated',		// ???????? IDEAS
-		soc_vk: 'none',
-		soc_instagram: 'none',
-		soc_fb: 'none',
-		soc_twitter: 'none',
-		design_photo: data.photoSrc,			// or default photo
-		design_background: data.backgroundSrc,  // or default background
-		views: 0,
-		products: 0,
+		currency: data.currency,
+		campaignSubs: data.campaignSubs,
+		wishList: data.wishList || [],
+		categoriesSubs: data.categoriesSubs || [],
+		tagsSubs: data.tagsSubs || [],
 		createdAt: new Date()
 	});
-	let promise = campaign.save();
+	let promise = user.save();
     return promise;
 
 }
 
 //----------------------------------------------------------------------------------------
-// Get campaigns with options
+// Get array of user(s) with options
 
 module.exports.get = (settings) => {
 	/*
@@ -60,15 +56,15 @@ module.exports.get = (settings) => {
 
 	switch(settings.action){
 		case 'empty': {
-			return Campaigns.find({});
+			return Users.find({});
 			break;
 		};
 		case 'params': {
-			return Campaigns.find(settings.data);
+			return Users.find(settings.data);
 			break;
 		};
 		default: {
-			return Campaigns.find({});
+			return Users.find({});
 			break;
 		}
 	}

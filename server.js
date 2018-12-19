@@ -23,7 +23,7 @@ db.setUpConnection();
 // Express Settings
 
 let sessionMiddleware = session({
-    secret: "213jnr436js",
+    secret: "213jnr436js",			// !! FROM NODE.ENV in prod
     resave: true,
     saveUninitialized: true
 });
@@ -47,7 +47,7 @@ app.listen(cfg['PORT'], () => {
     Logger.write({source: "Express", action: "INFO", text:`Express server running on port ${cfg['PORT']}!`});
 });
 
-/* dev express */
+/* dev stuff / express */
 let RoutesList = require('express-list-endpoints');
 console.log(RoutesList(app));
 /* ---------- */

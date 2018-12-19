@@ -1,5 +1,8 @@
-let mongoose = require('mongoose'),
-	campaigns 	 = require('./CampaignUtils.js');
+let mongoose 	 = require('mongoose'),
+	campaigns 	 = require('./CampaignUtils.js'),
+	products 	 = require('./ProductUtils.js'),
+	orders 	     = require('./OrderUtils.js'),
+	users 	     = require('./UserUtils.js');
 
 mongoose.set('useCreateIndex', true);
 
@@ -10,3 +13,9 @@ module.exports.setUpConnection = () => {
 }
 
 module.exports.Campaigns = campaigns;
+
+module.exports.Products  = products;
+
+module.exports.Orders    = orders;
+
+module.exports.Users     = users;
