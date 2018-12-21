@@ -41,7 +41,7 @@ app.use(sessionMiddleware);
 
 app.use(express.static('public_files'));	// Public access
 
-requireFu(__dirname + '/routes')(app);
+requireFu(__dirname + '/routes')(app, db);
 
 app.listen(cfg['PORT'], () => {
     Logger.write({source: "Express", action: "INFO", text:`Express server running on port ${cfg['PORT']}!`});
