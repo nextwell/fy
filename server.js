@@ -23,7 +23,7 @@ db.setUpConnection();
 // Express Settings
 
 let sessionMiddleware = session({
-    secret: "213jnr436js",			// !! FROM NODE.ENV in prod
+    secret: process.env.sessionKey || "213jnr436js",
     resave: true,
     saveUninitialized: true
 });

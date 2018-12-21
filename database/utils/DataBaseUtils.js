@@ -2,7 +2,8 @@ let mongoose 	 = require('mongoose'),
 	campaigns 	 = require('./CampaignUtils.js'),
 	products 	 = require('./ProductUtils.js'),
 	orders 	     = require('./OrderUtils.js'),
-	users 	     = require('./UserUtils.js');
+	users 	     = require('./UserUtils.js'),
+	transactions = require('./TransactionUtils.js');
 
 mongoose.set('useCreateIndex', true);
 
@@ -12,13 +13,15 @@ module.exports.setUpConnection = () => {
 	mongoose.connect(`mongodb://localhost/fy`, { useNewUrlParser: true } );
 }
 
-module.exports.Campaigns = campaigns;
+module.exports.Campaigns    = campaigns;
 
-module.exports.Products  = products;
+module.exports.Products     = products;
 
-module.exports.Orders    = orders;
+module.exports.Orders       = orders;
 
-module.exports.Users     = users;
+module.exports.Users        = users;
+
+module.exports.Transactions = transactions;
 
 
 /* ------- DEV  ------- */
@@ -58,6 +61,20 @@ module.exports.Users     = users;
 		productID: '5c1a1b766f459d22dcabbec5',
 		price: 1499,
 		currency: 'RUB'
+	})*/
+
+	/*transactions.create({	
+		campaignID: '5c1a1aa0cfbd8e0ed01e3163',
+		value: 999,
+		currency: 'RUB',
+		status: 'success'
+	})*/
+
+	/*transactions.create({	
+		campaignID: '5c1a1aa0cfbd8e0ed01e3163',
+		value: 1299,
+		currency: 'RUB',
+		status: 'failed'
 	})*/
 
 /* -------------------- */
