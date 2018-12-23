@@ -1,0 +1,12 @@
+// CHAT
+
+	socket.io & db autosaving ???
+
+------
+
+	chatroom ( db loading when user/campaign click on chat root )
+	last ( all sorted ) messages, direct same ??
+
+
+// -----------------
+

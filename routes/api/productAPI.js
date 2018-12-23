@@ -39,7 +39,6 @@ module.exports = (app, db) => {
 		let data = {
 			regions: req.params.region
 		};
-		console.log(data);
 		db.Products.get({ action: 'params', data })
 			.then(data => {
 				res.json(data);
@@ -54,7 +53,6 @@ module.exports = (app, db) => {
 		let data = {
 			categories: req.params.category
 		};
-		console.log(data);
 		db.Products.get({ action: 'params', data })
 			.then(data => {
 				res.json(data);

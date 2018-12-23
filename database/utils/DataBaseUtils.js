@@ -3,7 +3,8 @@ let mongoose 	 = require('mongoose'),
 	products 	 = require('./ProductUtils.js'),
 	orders 	     = require('./OrderUtils.js'),
 	users 	     = require('./UserUtils.js'),
-	transactions = require('./TransactionUtils.js');
+	transactions = require('./TransactionUtils.js'),
+	messages 	 = require('./MessageUtils.js');
 
 mongoose.set('useCreateIndex', true);
 
@@ -22,6 +23,8 @@ module.exports.Orders       = orders;
 module.exports.Users        = users;
 
 module.exports.Transactions = transactions;
+
+module.exports.Messages 	= messages;
 
 
 /* ------- DEV  ------- */
@@ -75,6 +78,12 @@ module.exports.Transactions = transactions;
 		value: 1299,
 		currency: 'RUB',
 		status: 'failed'
+	})*/
+
+	/*messages.create({	
+		campaignID: '5c1a1aa0cfbd8e0ed01e3163',
+		userID: '5c1a1c6c0410eb20685a5068',
+		text: 'hi, i need this ****, its awesome!'
 	})*/
 
 /* -------------------- */
