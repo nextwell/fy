@@ -23,7 +23,7 @@ module.exports.create = (data) => {
 		login: data.login,
 		password: data.password,
 		name: data.name,
-		photo: data.photosrc,
+		photo: data.photosrc || 'defaultphoto.png',					// like /userfiles/defaultphoto.png
 		balance: 0,
 		currency: data.currency,
 		campaignSubs: data.campaignSubs || [],

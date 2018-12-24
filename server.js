@@ -51,3 +51,21 @@ app.listen(cfg['PORT'], () => {
 let RoutesList = require('express-list-endpoints');
 console.log(RoutesList(app));
 /* ---------- */
+
+
+
+//----------------------------------------------------------------------------------------
+// Socket.io Settings
+
+let server = require('http').Server(app);
+let io = require("socket.io")(server);
+
+io.use(function(socket, next) {
+    sessionMiddleware(socket.request, socket.request.res, next);			// share session with socket.io
+});
+
+requireFu(__dirname + '/sockets')(io, db);		// require all sockets
+
+server.listen(cfg['IO-PORT']);
+
+Logger.write({source: "Socket.io", action: "INFO", text:`Socket.io running on port ${cfg['IO-PORT']}!`});
