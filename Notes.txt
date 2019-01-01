@@ -4,9 +4,10 @@
 
 ------
 
-	chatroom ( db loading when user/campaign click on chat root )
-	last ( all sorted ) messages, direct same ??
+	chatroom ( db loading when user/campaign click on chat room )
+	last ( all sorted ) messages, direct same ?? must be uniq of campaigns/users ids and sorted by date
 
 
 // -----------------
 
+	- uploader tests!

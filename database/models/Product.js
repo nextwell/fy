@@ -15,6 +15,7 @@ const ProductSchema = new Schema({
 	orders: { type: Number },
 	regions: { type: Array },
 	createdAt: { type: Date },
+	photos: { type: Array },
 	status: { type: String }			// ???
 });
 

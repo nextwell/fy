@@ -9,7 +9,7 @@ const UserSchema = new Schema({
 	photo: { type: String },
 	balance: { type: Number },
 	currency: { type: String },
-	campaignSubs: { type: Array },
+	campaignSubs: { type: Array },					// follow list 
 	wishList: { type: Array },
 	/*------ ??????????????? -------*/
 	categoriesSubs: { type: Array },

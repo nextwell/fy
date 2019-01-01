@@ -1,3 +1,5 @@
+// order like first msg with product ( same vk shop)
+
 let mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
